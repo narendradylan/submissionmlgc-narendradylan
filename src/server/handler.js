@@ -1,4 +1,4 @@
-const predictClassification = require("../services/InferenceService");
+const predictClassification = require("../services/inferenceService");
 const crypto = require("crypto");
 const storeData = require("../services/storeData");
 
@@ -19,7 +19,7 @@ async function postPredictHandler(request, h) {
     createdAt: createdAt,
   };
 
-  // await storeData(id, data);
+  await storeData(id, data);
 
   const response = h.response({
     status: "success",
